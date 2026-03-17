@@ -5,6 +5,7 @@ import express from "express"
 import "dotenv/config"
 import cors from "cors"
 import http from "http"
+import { connectDB } from "./lib/db.js";
 // import { prototype } from "events";
 
 // create express app and HTTP Server
@@ -22,6 +23,7 @@ app.use("/api/status", (req, res)=> {
     res.send("Server is live")
 })
 
+await connectDB();
 // if the port number is available in the environment variable 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, ()=>{
