@@ -1,6 +1,7 @@
 // cors -> for connecting backend to any frontend url
 // cloudinary -> for storing the chat images to the cloud
 // bcryptjs -> for encrypting the password
+// token is used for verifying the user by your secret key
 import express from "express"
 import "dotenv/config"
 import cors from "cors"
