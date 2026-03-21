@@ -7,6 +7,7 @@ import "dotenv/config"
 import cors from "cors"
 import http from "http"
 import { connectDB } from "./lib/db.js";
+import userRouter from "./routes/userRoutes.js";
 // import { prototype } from "events";
 
 // create express app and HTTP Server
@@ -23,6 +24,8 @@ app.use(cors());
 app.use("/api/status", (req, res)=> {
     res.send("Server is live")
 })
+
+app.use("/api/auth", userRouter)
 
 await connectDB();
 // if the port number is available in the environment variable 
